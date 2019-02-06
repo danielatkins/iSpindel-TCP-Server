@@ -45,7 +45,7 @@ $(function ()
       },
       title: 
       {
-        text: '<?php echo $_GET['name'];?>: Akku'
+        text: '<?php echo $_GET['name'];?>: Battery'
       },
 
       pane: {
@@ -120,7 +120,7 @@ $(function ()
     },
 
     series: [{
-        name: 'Spannung',
+        name: 'Battery',
         data: [<?php echo $battery;?>],
         tooltip: {
             valueSuffix: ' Volt'
@@ -225,7 +225,7 @@ $(function ()
     },
 
     series: [{
-        name: 'Winkel',
+        name: 'Angle',
         data: [<?php echo $angle;?>],
         tooltip: {
             valueSuffix: '°'
@@ -247,7 +247,7 @@ $(function ()
 
       title: 
       {
-        text: 'Temperatur'
+        text: 'Temperature'
       },
 
       pane: {
@@ -330,7 +330,7 @@ $(function ()
     },
 
     series: [{
-        name: 'Temperatur',
+        name: 'Temperature',
         data: [<?php echo $temperature;?>],
         tooltip: {
             valueSuffix: '°C'
