@@ -60,7 +60,7 @@
 <body bgcolor="#E6E6FA">
 <form name="main" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 <h1>RasPySpindel</h1>
-<h3>Diagramm Auswahl <?php echo($daysago)?> Tage</h3>
+<h3>Chart selection <?php echo($daysago)?> days</h3>
 
 <select name = ispindel_name>
         <?php
@@ -76,15 +76,15 @@
 </select>
 
 <select name = chart_filename>
-        <option value="status.php" selected>Status (Batterie, Winkel, Temperatur)</option>
-        <option value="battery.php">Batteriezustand</option>
-        <option value="wifi.php">Netzwerk Empfangsqualität</option>
-        <option value="plato4.php">Extrakt und Temperatur (RasPySpindel)</option>
-        <option value="plato4_ma.php">Extrakt und Temperatur (RasPySpindel), Geglättet</option>
-        <option value="angle.php">Tilt und Temperatur</option>
-        <option value="angle_ma.php">Tilt und Temperatur, Geglättet</option>
-        <option value="plato.php">Extrakt und Temperatur (iSpindel Polynom)</option>
-        <option value="reset_now.php">Gärbeginn Zeitpunkt setzen</option>
+        <option value="status.php" selected>Status (Battery, Angle, Temperature)</option>
+        <option value="battery.php">Battery status</option>
+        <option value="wifi.php">Wifi signal strength</option>
+        <option value="plato4.php">Extract and Temperature (RasPySpindel)</option>
+        <option value="plato4_ma.php">Extract and Temperature (RasPySpindel), smoothed</option>
+        <option value="angle.php">Tilt and Temperature</option>
+        <option value="angle_ma.php">Tilt and Temperature, smoothed</option>
+        <option value="plato.php">Extract and Temperature (iSpindel Polynom)</option>
+        <option value="reset_now.php">Set start of fermentation time</option>
 </select>
 
 <br />
@@ -93,16 +93,16 @@
 <!-- "hidden" checkbox to make sure we have a response here and not just send "null" -->
 <input type = "hidden" name="fromreset" value="0">
 <input type = "checkbox" name="fromreset" value="1">
-Daten seit zuletzt gesetztem "Reset" Flag
+Data since last set "Reset" Flag
 
 <br />
-oder:
+or:
 <input type = "number" name = "days" min = "1" max = "365" step = "1" value = "<?php echo($daysago)?>">
-Tage Historie
+Days history
 <br />
 <br />
 
-<input type = "submit" name = "Go" value = "Anzeigen">
+<input type = "submit" name = "Go" value = "Show">
 <br />
 </form>
 </body>
