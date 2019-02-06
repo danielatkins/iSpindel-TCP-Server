@@ -151,15 +151,16 @@ By default, we assume the database name and user ID are 'iSpindle', and the tabl
 In order to create a table inside your MySQL database accordingly, use this SQL statement:
 
 	CREATE TABLE 'Data' (
-		'Timestamp' datetime NOT NULL,
-		'Name' varchar(64) COLLATE ascii_bin NOT NULL,
-		'ID' varchar(64) COLLATE ascii_bin NOT NULL,
-		'Angle' double NOT NULL,
-		'Temperature' double NOT NULL,
-		'Battery' double NOT NULL,
-		'ResetFlag' boolean,
-		'Gravity' double NOT NULL,
-		PRIMARY KEY ('Timestamp', 'Name', 'ID')
+		`Timestamp` datetime NOT NULL,
+		`Name` varchar(64) COLLATE ascii_bin NOT NULL,
+		`ID` varchar(64) COLLATE ascii_bin NOT NULL,
+		`Angle` double NOT NULL,
+		`Temperature` double NOT NULL,
+		`Battery` double NOT NULL,
+		`ResetFlag` boolean,
+		`Gravity` double NOT NULL,
+		`Recipe` VARCHAR(64),
+		PRIMARY KEY (`Timestamp`, `Name`, `ID`)
 	) 
 	ENGINE=InnoDB DEFAULT CHARSET=ascii 
 	COLLATE=ascii_bin COMMENT='iSpindle Data';
