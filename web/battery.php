@@ -43,7 +43,7 @@ $(function ()
       },
       title: 
       {
-        text: 'Aktueller Ladezustand: <?php echo $_GET['name'];?>'
+        text: 'Current charge status: <?php echo $_GET['name'];?>'
       },
 
       pane: {
