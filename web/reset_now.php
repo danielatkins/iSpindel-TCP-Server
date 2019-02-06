@@ -20,8 +20,8 @@ if (! $q_sql){
    echo "Fehler beim Insert";
 }
 else {
-   echo "Reset-Timestamp in Datenbank eingetragen <br>";
-   echo "Sudname <b>$Recipe</b> in Datenbank eingetragen";
+   echo "Reset-Timestamp entered in database <br>";
+   echo "Sudname <b>$Recipe</b> entered in database";
 }
 ?>
 
