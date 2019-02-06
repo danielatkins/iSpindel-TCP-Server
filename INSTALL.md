@@ -164,6 +164,7 @@ Otherwise, the main data table will suffice:
 		`UserToken` varchar(64) COLLATE ascii_bin,
 		`Interval` int,
 		`RSSI` int,
+		`Recipe` VARCHAR(64),
  	PRIMARY KEY (`Timestamp`,`Name`,`ID`)
 	) ENGINE=InnoDB DEFAULT CHARSET=ascii COLLATE=ascii_bin COMMENT='iSpindle Data';
 
