@@ -43,7 +43,7 @@ $(function ()
       },
       title: 
       {
-        text: 'Aktuelle WiFi Empfangsqualität: <?php echo $_GET['name'];?>'
+        text: 'WiFi signal strength: <?php echo $_GET['name'];?>'
       },
 
       pane: {
