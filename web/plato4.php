@@ -63,7 +63,7 @@ $(function ()
     {
         Highcharts.setOptions({
               global: {
-                  timezone: 'Europe/Berlin'
+                  timezone: 'Australia/Darwin'
               }
           });
                 
@@ -79,24 +79,24 @@ $(function ()
             },
             subtitle:
                   { text: ' <?php                                                               
-                  $timetext = 'Temperatur und Extraktgehalt ';                             
+                  $timetext = 'Temperature and extract content ';                             
                   if($_GET['reset'])                                        
                   {                                                         
-                    $timetext .= 'seit dem letzten Reset: ';                
+                    $timetext .= 'since the last Reset: ';                
                   }             
                   else          
                         {     
-                    $timetext .= 'der letzten ';
+                    $timetext .= 'the latest ';
                   }     
                   if($tfweeks != 0)                
                   {                                
-                    $timetext .= $tfweeks . ' Woche(n), ';                                      
+                    $timetext .= $tfweeks . ' Week(n), ';                                      
                   }                                                                           
                   if($tfdays != 0)                                                            
                   {
-                    $timetext .= $tfdays . ' Tag(e), ';
+                    $timetext .= $tfdays . ' Day(e), ';
                   }
-                  $timetext .= $tfhours . ' Stunde(n).';
+                  $timetext .= $tfhours . ' Hour(n).';
                   echo $timetext;
                 ?>'                        
       },                                                                
@@ -106,7 +106,7 @@ xAxis:
                 gridLineWidth: 1,
                 title:
             {
-                text: 'Uhrzeit'
+                text: 'time of day'
             }
             },
             yAxis: [
@@ -117,7 +117,7 @@ xAxis:
                     max: 25,
                     title:
                     {
-                        text: 'Extrakt %w/w'
+                        text: 'Extract %w/w'
                     },
                     labels:
                     {
@@ -139,7 +139,7 @@ xAxis:
                     gridLineWidth: 0,
                     opposite: true,
                     title: {
-                        text: 'Temperatur'
+                        text: 'Temperature'
                     },
                     labels: {
                         align: 'right',
@@ -158,7 +158,7 @@ xAxis:
                 crosshairs: [true, true],
                 formatter: function() 
                 {
-                    if(this.series.name == 'Temperatur') {
+                    if(this.series.name == 'Temperature') {
 			const pointData = chartTemp.find(row => row.timestamp === this.point.x)
                         return '<b>Sudname: </b>'+pointData.recipe+'<br>'+'<b>'+ this.series.name +' </b>um '+ Highcharts.dateFormat('%H:%M', new Date(this.x)) +' Uhr:  '+ this.y +'°C';
                     } else {
@@ -178,7 +178,7 @@ xAxis:
             series:
             [
                 {
-                    name: 'Extrakt',
+                    name: 'Extract',
                     color: '#FF0000',
                     data: chartDens.map(row => [row.timestamp, row.value]),
                     marker: 
@@ -197,7 +197,7 @@ xAxis:
                     }
                 },
                 {
-                    name: 'Temperatur',
+                    name: 'Temperature',
                     yAxis: 1,
                     color: '#0000FF',
                     data: chartTemp.map(row => [row.timestamp, row.value]),
