@@ -65,7 +65,7 @@ $(function ()
   { 
     Highcharts.setOptions({
       global: {
-      	timezone: 'Europe/Berlin'
+      	timezone: 'Australia/Darwin'
       }
     });
        
@@ -81,24 +81,24 @@ $(function ()
       },
       subtitle: 
       { text: ' <?php
-                  $timetext = 'Temperatur und Winkel ';               
+                  $timetext = 'Temperature and angle ';               
                   if($_GET['reset']) 
                   {     
-                    $timetext .= 'seit dem letzten Reset: ';
+                    $timetext .= 'since the last Reset: ';
                   }
                   else
 	                {
-                    $timetext .= 'der letzten ';
+                    $timetext .= 'the latest ';
                   }
                   if($tfweeks != 0)
                   {
-                    $timetext .= $tfweeks . ' Woche(n), ';
+                    $timetext .= $tfweeks . ' Week(n), ';
                   }
                   if($tfdays != 0)
                   {
-                    $timetext .= $tfdays . ' Tag(e), ';
+                    $timetext .= $tfdays . ' Day(e), ';
                   }
-                  $timetext .= $tfhours . ' Stunde(n).';
+                  $timetext .= $tfhours . ' Hour(n).';
                   echo $timetext;
                 ?>'
       },
@@ -161,7 +161,7 @@ $(function ()
 	crosshairs: [true, true],
         formatter: function() 
         {
-	   if(this.series.name == 'Temperatur') {
+	   if(this.series.name == 'Temperature') {
                 const pointData = chartTemp.find(row => row.timestamp === this.point.x)
                 return '<b>Sudname: </b>'+ pointData.recipe +'<br>'+'<b>'+ this.series.name +' </b>um '+ Highcharts.dateFormat('%H:%M', new Date(this.x)) +' Uhr:  '+ this.y +'°C';
            } else {
@@ -181,7 +181,7 @@ $(function ()
       series:
       [
 	  {
-          name: 'Winkel', 
+          name: 'Angle', 
 	  color: '#FF0000',
           data: chartAngle.map(row => [row.timestamp, row.value]),
           marker: 
@@ -200,7 +200,7 @@ $(function ()
           }    
           },
 	  {
-          name: 'Temperatur', 
+          name: 'Temperature', 
 	  yAxis: 1,
 	  color: '#0000FF',
           data: chartTemp.map(row => [row.timestamp, row.value]),
